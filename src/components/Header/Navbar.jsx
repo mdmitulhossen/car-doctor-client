@@ -13,7 +13,7 @@ const Navbar = () => {
     ];
     const user = false
     return (
-        <div className="max-w-[1920px] px-4 md:px-[40px] lg:px-[80px] 2xl:px-[120px] mx-auto mt-2">
+        <div className="carDoctorContainer mt-2">
             <div className="navbar  px-0">
                 <div className="navbar-start">
                     {/* logo */}
@@ -38,6 +38,8 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end relative">
+                    {/* cart btn */}
+                    <button className="mr-3"><box-icon type='solid' name='shopping-bag' size='md' color='#FF3811' animation='tada'></box-icon></button>
                     {/* user dropdown */}
                     {
                         user ?

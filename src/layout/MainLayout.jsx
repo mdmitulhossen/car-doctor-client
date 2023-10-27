@@ -4,9 +4,8 @@ import Navbar from "../components/Header/Navbar.jsx";
 const MainLayout = () => {
     return (
         <div>
-            <Navbar/>
-           Comming soon.......
-           <Outlet/>
+            <Navbar />
+            <Outlet />
         </div>
     );
 };
