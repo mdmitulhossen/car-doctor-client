@@ -5,7 +5,7 @@ import hero4 from '../../assets/images/homeCarousel/4.jpg'
 
 const Hero = () => {
     return (
-        <div className="carDoctorContainer mt-8">
+        <div className="mt-8">
             <div className="carousel w-full h-[500px] md:h-[600px] rounded-md">
 
                 <div id="slide1" className="carousel-item relative w-full h-full">
