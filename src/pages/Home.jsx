@@ -1,48 +1,34 @@
-import Hero from "../components/Header/Hero";
+import { useEffect } from "react";
+import { useState } from "react";
 
 // image import
 import aboutUs1 from '../assets/images/about_us/person.jpg'
 import aboutUs2 from '../assets/images/about_us/parts.jpg'
-import SectionHeader from "../components/Header/SectionHeader";
-import ServiceCard from "../components/Cards/ServiceCard";
 
 import contact1 from '../assets/contact/calender.svg'
 import contact3 from '../assets/contact/location.svg'
 import contact2 from '../assets/contact/phone.svg'
-import ProductCard from "../components/Cards/ProductCard";
-import Button from "../components/Button/Button";
-import { useEffect } from "react";
-import { useState } from "react";
-import TeamCard from "../components/Cards/TeamCard";
 
-
-// css
-import './css/home.css'
-
-
-// import Swiper core and required modules
-import { Navigation, A11y, Autoplay } from 'swiper/modules';
-
-import { Swiper, SwiperSlide, useSwiper } from 'swiper/react';
-
-// Import Swiper styles
-import 'swiper/css';
-import 'swiper/css/navigation';
-import SwiperNavButtons from "../components/Button/SwiperNavButtons";
-// import 'swiper/css/pagination';
+// component import
+import Hero from "../components/Header/Hero";
+import HomeServiceSection from "./home/HomeServiceSection";
+import HomeOurTeamSection from "./home/HomeOurTeamSection";
+import HomeProductsSection from "./home/HomeProductsSection";
+import HomeChooseUsSection from "./home/HomeChooseUsSection";
+import HomeTestimonial from "./home/HomeTestimonial";
 
 
 
 const Home = () => {
     const [services, setServices] = useState([])
+
     useEffect(() => {
         fetch('/services.json')
             .then(res => res.json())
             .then(data => setServices(data))
     }, [])
-    // console.log(services)
 
-    const swiper = useSwiper();
+
     return (
         <div className="carDoctorContainer pb-10">
             <Hero />
@@ -71,23 +57,7 @@ const Home = () => {
 
             {/* our services */}
             <div className="mt-24">
-                {/* header */}
-                <SectionHeader
-                    header="Service"
-                    title="Our Service Area"
-                    smallDisc="The majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable."
-                />
-
-                {/* section container */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 mt-10">
-                    {
-                        services?.map((service, index) => <ServiceCard key={service._id} service={service} />)
-                    }
-                </div>
-
-                <div className="flex justify-center w-full pt-10">
-                    <Button name='More Service' />
-                </div>
+                <HomeServiceSection />
             </div>
 
             {/* Contact */}
@@ -120,84 +90,22 @@ const Home = () => {
 
             {/* Our Product */}
             <div className="mt-20">
-                {/* header */}
-                <SectionHeader
-                    header="Popular Products"
-                    title="Browse Our Products"
-                    smallDisc="The majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable."
-                />
-
-                {/* product container */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 mt-10">
-                    <ProductCard />
-                    <ProductCard />
-                    <ProductCard />
-                    <ProductCard />
-                    <ProductCard />
-                    <ProductCard />
-                    <ProductCard />
-                    <ProductCard />
-                </div>
-                <div className="flex justify-center w-full pt-10">
-                    <Button name='More Product' />
-                </div>
+                <HomeProductsSection />
             </div>
 
             {/* Our Team */}
             <div className="mt-20">
-                {/* header */}
-                <SectionHeader
-                    header="Team"
-                    title="Meet Our Team"
-                    smallDisc="The majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable."
-                />
+                <HomeOurTeamSection />
+            </div>
 
-                {/* container  */}
-                <div className="mt-10 ">
-                    <Swiper
-                        // install Swiper modules
-                        modules={[Navigation, A11y, Autoplay]}
-                        spaceBetween={20}
-                        slidesPerView={1}
-                        breakpoints={{
-                            640: {
-                                slidesPerView: 2,
-                                spaceBetween:20
-                            },
-                            768: {
-                                slidesPerView: 2, 
-                                spaceBetween:20                 
-                            },
-                            1024: {
-                                slidesPerView: 3,
-                                spaceBetween:20            
-                            },
-                            1280: {
-                                slidesPerView: 4, 
-                                spaceBetween:20           
-                            },
-                        }}
-                        autoplay={{
-                            delay: 2500,
-                            disableOnInteraction: false,
-                        }}
-                        // navigation
-                        // pagination={{ clickable: true }}
-                        onSwiper={(swiper) => console.log(swiper)}
-                        onSlideChange={() => console.log('slide change')}
-                    >
-                        <SwiperSlide><TeamCard /></SwiperSlide>
-                        <SwiperSlide><TeamCard /></SwiperSlide>
-                        <SwiperSlide><TeamCard /></SwiperSlide>
-                        <SwiperSlide><TeamCard /></SwiperSlide>
-                        <SwiperSlide><TeamCard /></SwiperSlide>
-                        <SwiperSlide><TeamCard /></SwiperSlide>
-                        <SwiperSlide><TeamCard /></SwiperSlide>
-                        <SwiperSlide><TeamCard /></SwiperSlide>
-                        <SwiperSlide><TeamCard /></SwiperSlide>
-                    </Swiper>
-                    <SwiperNavButtons/>
-                </div>
+            {/* Why choose Us */}
+            <div className="mt-20">
+                <HomeChooseUsSection/>
+            </div>
+
+            {/* Why choose Us */}
+            <div className="mt-20">
+                <HomeTestimonial/>
             </div>
         </div>
     );
