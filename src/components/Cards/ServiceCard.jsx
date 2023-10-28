@@ -1,7 +1,7 @@
 const ServiceCard = ({service}) => {
     const {title,img,price} = service || {}
     return (
-        <div className=" w-full bg-base-100 shadow border border-[#E8E8E8] rounded-md flex flex-col">
+        <div className=" w-full bg-base-100  border border-[#E8E8E8] rounded-md flex flex-col">
             <figure className="px-5 pt-5">
                 <img src={img} alt="Shoes" className="rounded-md w-full h-[200px] object-cover" />
             </figure>

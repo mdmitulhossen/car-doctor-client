@@ -2,7 +2,7 @@ import test from '../../assets/images/products/1.png'
 const ProductCard = ({ name, price }) => {
     const rate = 2
     return (
-            <div className=" w-full bg-base-100 shadow border border-[#E8E8E8] rounded-md flex flex-col p-5 cursor-pointer group">
+            <div className=" w-full bg-base-100 border border-[#E8E8E8] rounded-md flex flex-col p-5 cursor-pointer group">
                 <figure className=" bg-[#F3F3F3] h-[200px] rounded-md relative">
                     <p className='absolute px-2 py-1 rounded-md top-2 right-2 bg-white cursor-pointer hover:bg-[#b5e2dd] lg:hidden lg:group-hover:block'>
                         <box-icon name='shopping-bag' animation='tada' color='#FF3811'></box-icon>

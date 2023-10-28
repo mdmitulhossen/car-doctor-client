@@ -5,7 +5,7 @@ import twiter from '../../assets/social/twiter.svg'
 
 const TeamCard = ({ title, price }) => {
     return (
-        <div className=" w-full bg-base-100 shadow border border-[#E8E8E8] rounded-md flex flex-col p-5">
+        <div className=" w-full bg-base-100  border border-[#E8E8E8] rounded-md flex flex-col p-5">
             <figure className="">
                 <img src='https://i.ibb.co/ydCbDN3/5555.jpg' alt="Shoes" className="rounded-md w-full h-[250px] object-cover" />
             </figure>
