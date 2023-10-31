@@ -3,6 +3,7 @@ import MainLayout from "../layout/MainLayout.jsx";
 import Services from "../pages/Services.jsx";
 import Home from "../pages/Home.jsx";
 import ServiceDetailsPage from "../pages/ServiceDetailsPage.jsx";
+import CheckOutPage from "../pages/CheckOutPage.jsx";
 
 
 const Routes = createBrowserRouter([
@@ -25,6 +26,10 @@ const Routes = createBrowserRouter([
             {
                 path: '/service/:id',
                 element: <ServiceDetailsPage/>
+            },
+            {
+                path: '/checkout/:id',
+                element: <CheckOutPage/>
             },
             {
                 path: '/contact',

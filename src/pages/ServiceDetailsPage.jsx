@@ -80,7 +80,7 @@ const ServiceDetailsPage = () => {
                 {/* right side */}
                 <div className="col-span-full lg:col-span-4 rounded-md space-y-6">
                     {/* services */}
-                    <div className="bg-[#F3F3F3] p-10 space-y-3">
+                    <div className="bg-[#F3F3F3] p-10 space-y-3 rounded-md">
                         <p className="text-[#151515] text-2xl font-semibold">Services</p>
                         <button className="px-4 py-2 hover:bg-[#FF3811] bg-white w-full rounded-md flex justify-between items-center font-semibold hover:text-white group">
                             <span>Full Car Repair</span>
@@ -105,8 +105,8 @@ const ServiceDetailsPage = () => {
 
                     <DiscountCard/>
 
-                    <p className="text-3xl text-[#151515] font-bold">
-                        Price $2200
+                    <p className="text-2xl text-[#151515] font-semibold">
+                        Price : $2200
                     </p>
 
                     <button className="px-4 py-3 w-full rounded-md bg-[#FF3811] text-white font-semibold text-sm ">Proceed Checkout</button>
