@@ -1,7 +1,13 @@
 import user from '../../assets/user.jpeg'
 import quate from '../../assets/icons/quote.svg'
 
+import { Rating, Star } from '@smastrom/react-rating'
 const TestimonialCard = () => {
+    const ratingStyle = {
+        itemShapes: Star,
+        activeFillColor: '#FF3811',
+        inactiveFillColor: '#ff39113a'
+      }
     return (
         <div className="p-8 border border-[#E8E8E8] rounded-md space-y-4">
             <div className='flex justify-between'>
@@ -21,13 +27,7 @@ const TestimonialCard = () => {
 
             </p>
 
-            <div className="rating ">
-                <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
-                <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" checked />
-                <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
-                <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
-                <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
-            </div>
+            <Rating style={{ maxWidth: 130 }} value={4} itemStyles= {ratingStyle} readOnly/>
         </div>
     );
 };

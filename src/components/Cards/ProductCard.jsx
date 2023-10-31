@@ -1,6 +1,12 @@
 import test from '../../assets/images/products/1.png'
+import { Rating, Star } from '@smastrom/react-rating'
 const ProductCard = ({ name, price }) => {
-    const rate = 2
+    const ratingStyle = {
+        itemShapes: Star,
+        activeFillColor: '#FF3811',
+        inactiveFillColor: '#ff39113a'
+      }
+ 
     return (
             <div className=" w-full bg-base-100 border border-[#E8E8E8] rounded-md flex flex-col p-5 cursor-pointer group">
                 <figure className=" bg-[#F3F3F3] h-[200px] rounded-md relative">
@@ -11,16 +17,8 @@ const ProductCard = ({ name, price }) => {
                 </figure>
                 <div className="pb-3 flex-grow pt-7  flex flex-col justify-between text-center items-center space-y-3">
                     <div className="rating rating-md">
-                        {
-                            [1, 2, 3, 4, 5].map((i, index) => {
-                                return (
-                                    i === rate ?
-                                        <input key={index} type="radio" name="rating-2" className="mask mask-star-2 bg-[#FF3811]" checked />
-                                        :
-                                        <input key={index} type="radio" name="rating-2" className="mask mask-star-2 bg-[#FF3811]" />
-                                )
-                            })
-                        }
+                     
+                        <Rating style={{ maxWidth: 130 }} value={3} itemStyles= {ratingStyle} readOnly/>
 
                     </div>
                     <h2 className="card-title text-[#444] text-[22px] font-bold">{name || 'services Name'}</h2>
