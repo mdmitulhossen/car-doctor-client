@@ -4,6 +4,8 @@ import Services from "../pages/Services.jsx";
 import Home from "../pages/Home.jsx";
 import ServiceDetailsPage from "../pages/ServiceDetailsPage.jsx";
 import CheckOutPage from "../pages/CheckOutPage.jsx";
+import LoginPage from "../pages/LoginPage.jsx";
+import SignUpPage from "../pages/SignUpPage.jsx";
 
 
 const Routes = createBrowserRouter([
@@ -42,12 +44,16 @@ const Routes = createBrowserRouter([
             {
                 path: '/appointment',
                 element: <div>appointment</div>
-            },
-            {
-                path: '/login',
-                element: <div>login</div>
             }
         ]
+    },
+    {
+        path: '/login',
+        element: <LoginPage/>
+    },
+    {
+        path: '/signup',
+        element: <SignUpPage/>
     }
 ])
 
