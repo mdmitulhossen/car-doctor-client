@@ -6,7 +6,7 @@ const Navbar = () => {
     const [userMenu, setUserMenu] = useState(false);
     const navMenu = [
         { name: "Home", link: "/" },
-        { name: "About", link: "/about" },
+        // { name: "About", link: "/about" },
         { name: "Services", link: "/services" },
         { name: "Contact", link: "/contact" },
         { name: "Blog", link: "/blog" },

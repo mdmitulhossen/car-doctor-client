@@ -6,12 +6,18 @@ import ServiceDetailsPage from "../pages/ServiceDetailsPage.jsx";
 import CheckOutPage from "../pages/CheckOutPage.jsx";
 import LoginPage from "../pages/LoginPage.jsx";
 import SignUpPage from "../pages/SignUpPage.jsx";
+import NotFoundPage from "../pages/NotFoundPage.jsx";
+import ContactPage from "../pages/ContactPage.jsx";
+import AppoinmentPage from "../pages/AppoinmentPage.jsx";
+import BlogPage from "../pages/BlogPage.jsx";
+import ServiceCartPage from "../pages/ServiceCartPage.jsx";
 
 
 const Routes = createBrowserRouter([
     {
         path: '/',
         element: <MainLayout/>,
+        errorElement:<NotFoundPage/>,
         children: [
             { 
                 path: '/', 
@@ -26,6 +32,10 @@ const Routes = createBrowserRouter([
                 element: <Services/>
             },
             {
+                path: '/cart',
+                element: <ServiceCartPage/>
+            },
+            {
                 path: '/service/:id',
                 element: <ServiceDetailsPage/>
             },
@@ -35,15 +45,15 @@ const Routes = createBrowserRouter([
             },
             {
                 path: '/contact',
-                element: <div>Contact</div>
+                element: <ContactPage/>
             },
             {
                 path: '/blog',
-                element: <div>Blog</div>
+                element: <BlogPage/>
             },
             {
                 path: '/appointment',
-                element: <div>appointment</div>
+                element: <AppoinmentPage/>
             }
         ]
     },
